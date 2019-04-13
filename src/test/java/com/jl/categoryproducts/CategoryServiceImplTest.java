@@ -9,18 +9,19 @@ import com.jl.categoryproducts.service.CategoryServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CategoryServiceimplTest {
 
-    private CategoryServiceImpl categoryServiceImpl;
+public class CategoryServiceImplTest {
+
+    private CategoryServiceImpl categoryService;
 
     @Before
     public void setUp() {
-        categoryServiceImpl = new CategoryServiceImpl();
+        categoryService = new CategoryServiceImpl();
     }
 
     @Test
     public void getCategoryProductsTest() {
-        Category category = categoryServiceImpl.getCategoryProducts();
+        Category category = categoryService.getCategoryProducts();
         assertNotNull(category);
         assertNotEquals(0, category.getProducts().size());
         assertEquals(50, category.getProducts().size());

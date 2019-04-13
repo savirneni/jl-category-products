@@ -8,6 +8,10 @@
     <artifactId>categoryproducts</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <springBoot.version>2.1.4.RELEASE</springBoot.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -25,6 +29,17 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${springBoot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <version>${springBoot.version}</version>
         </dependency>
     </dependencies>
 

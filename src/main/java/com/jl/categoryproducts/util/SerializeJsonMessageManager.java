@@ -2,6 +2,8 @@ package com.jl.categoryproducts.util;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jl.categoryproducts.exception.DeserializeException;
+import com.jl.categoryproducts.exception.SerializeException;
 import com.jl.categoryproducts.model.Category;
 
 import java.io.IOException;
@@ -27,8 +29,7 @@ public enum SerializeJsonMessageManager {
         try {
             return new String(Files.readAllBytes(Paths.get("src/main/resources/" + fileName)));
         } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException();
+            throw new SerializeException();
         }
     }
 
@@ -38,7 +39,7 @@ public enum SerializeJsonMessageManager {
         try {
             return mapper.readValue(this.serializedMessage, Category.class);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new DeserializeException();
         }
     }
 
