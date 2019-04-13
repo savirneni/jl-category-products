@@ -2,8 +2,8 @@ package com.jl.categoryproducts;
 
 import static org.junit.Assert.*;
 
-import com.jl.categoryproducts.model.Category;
-import com.jl.categoryproducts.model.Product;
+import com.jl.categoryproducts.backend.model.Category;
+import com.jl.categoryproducts.backend.model.Product;
 import com.jl.categoryproducts.service.CategoryServiceImpl;
 
 import org.junit.Before;

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.jl.categoryproducts.model.Product;
+import com.jl.categoryproducts.backend.model.Product;
 import com.jl.categoryproducts.service.CategoryServiceImpl;
 import com.jl.categoryproducts.service.ProductServiceImpl;
 

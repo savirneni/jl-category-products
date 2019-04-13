@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jl.categoryproducts.exception.DeserializeException;
 import com.jl.categoryproducts.exception.SerializeException;
-import com.jl.categoryproducts.model.Category;
+import com.jl.categoryproducts.backend.model.Category;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,4 +1,4 @@
-package com.jl.categoryproducts.model;
+package com.jl.categoryproducts.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

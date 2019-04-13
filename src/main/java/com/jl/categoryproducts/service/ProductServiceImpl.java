@@ -1,6 +1,6 @@
 package com.jl.categoryproducts.service;
 
-import com.jl.categoryproducts.model.Product;
+import com.jl.categoryproducts.backend.model.Product;
 
 import java.math.BigDecimal;
 import java.util.*;

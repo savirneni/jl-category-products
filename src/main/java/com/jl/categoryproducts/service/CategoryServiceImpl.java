@@ -1,6 +1,6 @@
 package com.jl.categoryproducts.service;
 
-import com.jl.categoryproducts.model.Category;
+import com.jl.categoryproducts.backend.model.Category;
 import com.jl.categoryproducts.util.SerializeJsonMessageManager;
 
 import org.springframework.stereotype.Service;
