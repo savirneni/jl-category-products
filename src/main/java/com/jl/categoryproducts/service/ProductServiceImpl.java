@@ -2,6 +2,7 @@ package com.jl.categoryproducts.service;
 
 import com.jl.categoryproducts.model.Product;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,6 @@ public class ProductServiceImpl {
     }
 
     public List<Product> getReducedProducts() {
-        return null;
+        return new ArrayList<>();
     }
 }

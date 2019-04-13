@@ -1,6 +1,7 @@
 package com.jl.categoryproducts;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import com.jl.categoryproducts.model.Product;
 import com.jl.categoryproducts.service.CategoryServiceImpl;
@@ -24,6 +25,7 @@ public class ProductServiceImplTest {
     public void getReducedProductsTest() {
         List<Product> reducedProducts = productService.getReducedProducts();
         assertNotNull(reducedProducts);
+        assertTrue(reducedProducts.size() < 45);
     }
 
 }
