@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import lombok.Value;
@@ -30,4 +31,5 @@ public class Product {
         this.colorSwatches = colorSwatches;
         this.price = price;
     }
+
 }

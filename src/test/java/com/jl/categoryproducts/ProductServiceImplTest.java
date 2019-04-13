@@ -25,7 +25,8 @@ public class ProductServiceImplTest {
     public void getReducedProductsTest() {
         List<Product> reducedProducts = productService.getReducedProducts();
         assertNotNull(reducedProducts);
-        assertTrue(reducedProducts.size() < 45);
+        assertTrue(!reducedProducts.get(0).getPrice().getWas().isEmpty());
+        assertTrue(reducedProducts.size() == 6);
     }
 
 }
