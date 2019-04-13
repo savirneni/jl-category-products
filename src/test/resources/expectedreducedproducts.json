@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "productId": "3525081",
+      "title": "hush Marble Panel Maxi Dress, Multi",
+      "colorSwatches": [],
+      "nowPrice": "£59",
+      "priceLabel": ""
+    },
+    {
+      "productId": "3525085",
+      "title": "hush Tasha Vest Dress",
+      "colorSwatches": [
+        {
+          "color": "Wine",
+          "rgbColor": "Red",
+          "skuId": "237494589"
+        },
+        {
+          "color": "Midnight",
+          "rgbColor": "Blue",
+          "skuId": "237494562"
+        }
+      ],
+      "nowPrice": "£100",
+      "priceLabel": ""
+    },
+    {
+      "productId": "3419105",
+      "title": "hush Venice Beach Dress",
+      "colorSwatches": [
+        {
+          "color": "French Blue",
+          "rgbColor": "Blue",
+          "skuId": "237348235"
+        },
+        {
+          "color": "Hibiscus",
+          "rgbColor": "Pink",
+          "skuId": "237348324"
+        },
+        {
+          "color": "Midnight",
+          "rgbColor": "Blue",
+          "skuId": "237348312"
+        }
+      ],
+      "nowPrice": "£2.25",
+      "priceLabel": ""
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-package com.jl.categoryproducts;
+package com.jl.categoryproducts.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

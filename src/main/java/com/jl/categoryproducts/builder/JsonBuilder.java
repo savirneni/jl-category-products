@@ -1,8 +1,12 @@
 package com.jl.categoryproducts.builder;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jl.categoryproducts.model.ColorSwatch;
 import com.jl.categoryproducts.model.Product;
+import com.jl.categoryproducts.model.Products;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -15,11 +19,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class JsonBuilder {
 
-    public String build(List<com.jl.categoryproducts.backend.model.Product> products) {
+    public String build(List<com.jl.categoryproducts.backend.model.Product> products) throws JsonProcessingException {
 
-        List<Product> reducedProducts = null;
+        List<Product> reducedProducts = new ArrayList<>();
         if (products != null && !products.isEmpty()) {
-            reducedProducts = new ArrayList<>();
             for (com.jl.categoryproducts.backend.model.Product product : products) {
 
                 Product rProduct = Product.builder()
@@ -33,17 +36,18 @@ public class JsonBuilder {
                 reducedProducts.add(rProduct);
             }
         }
-        return "";
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.enable(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT);
+        return objectMapper.writeValueAsString(Products.builder().products(reducedProducts).build());
     }
 
     private List<ColorSwatch> buildColorSwatch(List<com.jl.categoryproducts.backend.model.ColorSwatch> colorSwatches) {
-        List<ColorSwatch> rColorSwatches = null;
+        List<ColorSwatch> rColorSwatches = new ArrayList<>();
         if (colorSwatches != null && !colorSwatches.isEmpty()) {
-            rColorSwatches = new ArrayList<>();
             for (com.jl.categoryproducts.backend.model.ColorSwatch colorSwatch : colorSwatches) {
                 ColorSwatch rColorSwarch = ColorSwatch.builder()
                         .color(colorSwatch.getColor())
-                        .basicColor(colorSwatch.getBasicColor())
+                        .rgbColor(colorSwatch.getBasicColor())
                         .skuId(colorSwatch.getSkuId())
                         .build();
                 rColorSwatches.add(rColorSwarch);

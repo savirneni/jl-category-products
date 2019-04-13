@@ -1,10 +1,14 @@
 package com.jl.categoryproducts.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
 import lombok.Builder;
+import lombok.Value;
 
 @Builder
+@Value
 public class Product {
 
     private String productId;
@@ -12,5 +16,4 @@ public class Product {
     private List<ColorSwatch> colorSwatches;
     private String nowPrice;
     private String priceLabel;
-
 }

@@ -1,0 +1,226 @@
+{
+  "products": [
+    {
+      "productId": "3525081",
+      "type": "product",
+      "title": "hush Marble Panel Maxi Dress, Multi",
+      "code": "44452504",
+      "averageRating": 4.2083,
+      "reviews": 24,
+      "price": {
+        "was": "",
+        "then1": "",
+        "then2": "",
+        "now": "59.00",
+        "uom": "",
+        "currency": "GBP"
+      },
+      "image": "//johnlewis.scene7.com/is/image/JohnLewis/003519451?",
+      "additionalServices": [],
+      "displaySpecialOffer": "Exclusive to John Lewis & hush",
+      "promoMessages": {
+        "priceMatched": "",
+        "offer": "",
+        "customPromotionalMessage": "Exclusive to John Lewis & hush",
+        "bundleHeadline": "",
+        "customSpecialOffer": {}
+      },
+      "nonPromoMessage": "",
+      "defaultSkuId": "237494272",
+      "colorSwatches": [],
+      "colorSwatchSelected": 0,
+      "colorWheelMessage": "",
+      "outOfStock": false,
+      "emailMeWhenAvailable": false,
+      "availabilityMessage": "",
+      "compare": false,
+      "fabric": "",
+      "swatchAvailable": false,
+      "categoryQuickViewEnabled": true,
+      "swatchCategoryType": "",
+      "brand": "hush",
+      "ageRestriction": 0,
+      "isInStoreOnly": false,
+      "isMadeToMeasure": false,
+      "isBundle": false,
+      "isProductSet": false,
+      "promotionalFeatures": [],
+      "features": [],
+      "quickAddToBasket": {
+        "showChooseSizeTriggerQV": true
+      },
+      "dynamicAttributes": {
+        "newinproducttype": "Dresses",
+        "washinginstructions": "Machine washable",
+        "dressbyoccasion": "Weekend",
+        "dressshape": "Straight",
+        "typeofpattern": "Pattern"
+      },
+      "directorate": "Fashion Directorate",
+      "releaseDateTimestamp": 0
+    },
+    {
+      "productId": "3525085",
+      "type": "product",
+      "title": "hush Tasha Vest Dress",
+      "code": "44452455",
+      "averageRating": 4.5417,
+      "reviews": 24,
+      "price": {
+        "was": "",
+        "then1": "",
+        "then2": "",
+        "now": {
+          "from": "55.00",
+          "to": "100.00"
+        },
+        "uom": "",
+        "currency": "GBP"
+      },
+      "image": "//johnlewis.scene7.com/is/image/JohnLewis/003519508?",
+      "additionalServices": [],
+      "displaySpecialOffer": "Exclusive to John Lewis & hush",
+      "promoMessages": {
+        "priceMatched": "",
+        "offer": "",
+        "customPromotionalMessage": "Exclusive to John Lewis & hush",
+        "bundleHeadline": "",
+        "customSpecialOffer": {}
+      },
+      "nonPromoMessage": "",
+      "defaultSkuId": "237494601",
+      "colorSwatches": [
+        {
+          "color": "Wine",
+          "basicColor": "Red",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003519508alt4?cropN=0.5073684210526316,0.23789473684210527,0.16842105263157894,0.16842105263157894&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003519508?",
+          "isAvailable": true,
+          "skuId": "237494589"
+        },
+        {
+          "color": "Midnight",
+          "basicColor": "Blue",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003519502?cropN=0.42105263157894735,0.42105263157894735,0.16842105263157894,0.16842105263157894&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003519502?",
+          "isAvailable": false,
+          "skuId": "237494562"
+        }
+      ],
+      "colorSwatchSelected": 0,
+      "colorWheelMessage": "",
+      "outOfStock": false,
+      "emailMeWhenAvailable": false,
+      "availabilityMessage": "",
+      "compare": false,
+      "fabric": "",
+      "swatchAvailable": false,
+      "categoryQuickViewEnabled": true,
+      "swatchCategoryType": "",
+      "brand": "hush",
+      "ageRestriction": 0,
+      "isInStoreOnly": false,
+      "isMadeToMeasure": false,
+      "isBundle": false,
+      "isProductSet": false,
+      "promotionalFeatures": [],
+      "features": [],
+      "quickAddToBasket": {
+        "showChooseSizeTriggerQV": true
+      },
+      "dynamicAttributes": {
+        "newinproducttype": "Dresses",
+        "washinginstructions": "Machine washable",
+        "dressbyoccasion": "Holiday",
+        "dressshape": "Shift",
+        "typeofpattern": "Plain"
+      },
+      "directorate": "Fashion Directorate",
+      "releaseDateTimestamp": 0
+    },
+    {
+      "productId": "3419105",
+      "type": "product",
+      "title": "hush Venice Beach Dress",
+      "code": "44452035",
+      "averageRating": 4.6044,
+      "reviews": 91,
+      "price": {
+        "was": "",
+        "then1": "",
+        "then2": "",
+        "now": "2.25",
+        "uom": "",
+        "currency": "GBP"
+      },
+      "image": "//johnlewis.scene7.com/is/image/JohnLewis/003415131?",
+      "additionalServices": [],
+      "displaySpecialOffer": "Exclusive to John Lewis & hush",
+      "promoMessages": {
+        "priceMatched": "",
+        "offer": "",
+        "customPromotionalMessage": "Exclusive to John Lewis & hush",
+        "bundleHeadline": "",
+        "customSpecialOffer": {}
+      },
+      "nonPromoMessage": "",
+      "defaultSkuId": "237348339",
+      "colorSwatches": [
+        {
+          "color": "French Blue",
+          "basicColor": "Blue",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003415114alt1?cropN=0.4147368421052632,0.6231578947368421,0.06315789473684211,0.06315789473684211&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003415114?",
+          "isAvailable": false,
+          "skuId": "237348235"
+        },
+        {
+          "color": "Hibiscus",
+          "basicColor": "Pink",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003415131?cropN=0.4336842105263158,0.23578947368421052,0.08842105263157894,0.08842105263157894&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003415131?",
+          "isAvailable": true,
+          "skuId": "237348324"
+        },
+        {
+          "color": "Midnight",
+          "basicColor": "Blue",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003415128alt3?cropN=0.42105263157894735,0.42105263157894735,0.16842105263157894,0.16842105263157894&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003415128?",
+          "isAvailable": true,
+          "skuId": "237348312"
+        }
+      ],
+      "colorSwatchSelected": 1,
+      "colorWheelMessage": "",
+      "outOfStock": false,
+      "emailMeWhenAvailable": false,
+      "availabilityMessage": "",
+      "compare": false,
+      "fabric": "",
+      "swatchAvailable": false,
+      "categoryQuickViewEnabled": true,
+      "swatchCategoryType": "",
+      "brand": "hush",
+      "ageRestriction": 0,
+      "isInStoreOnly": false,
+      "isMadeToMeasure": false,
+      "isBundle": false,
+      "isProductSet": false,
+      "promotionalFeatures": [],
+      "features": [],
+      "quickAddToBasket": {
+        "showChooseSizeTriggerQV": true
+      },
+      "dynamicAttributes": {
+        "newinproducttype": "Dresses",
+        "washinginstructions": "Machine washable",
+        "dressbyoccasion": "Holiday",
+        "dressshape": "Shift",
+        "typeofpattern": "Plain"
+      },
+      "directorate": "Fashion Directorate",
+      "releaseDateTimestamp": 0
+    }
+  ]
+}
