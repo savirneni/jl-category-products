@@ -1,5 +1,6 @@
 package com.jl.categoryproducts;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -23,10 +24,15 @@ public class ProductServiceImplTest {
 
     @Test
     public void getReducedProductsTest() {
-        List<Product> reducedProducts = productService.getReducedProducts();
-        assertNotNull(reducedProducts);
-        assertTrue(!reducedProducts.get(0).getPrice().getWas().isEmpty());
-        assertTrue(reducedProducts.size() == 6);
+        List<Product> sortedReducedProducts = productService.getReducedProducts();
+        assertNotNull(sortedReducedProducts);
+        assertTrue(!sortedReducedProducts.get(0).getPrice().getWas().isEmpty());
+        //total reduced products
+        assertTrue(sortedReducedProducts.size() == 6);
+        //highest reduced product
+        assertEquals("3428696", sortedReducedProducts.get(0).getProductId());
+        //lowest reduced product
+        assertEquals("3341058", sortedReducedProducts.get(5).getProductId());
     }
 
 }

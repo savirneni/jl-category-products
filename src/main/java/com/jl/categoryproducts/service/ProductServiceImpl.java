@@ -25,9 +25,12 @@ public class ProductServiceImpl {
     }
 
     private List<Product> filterAndSort(List<Product> products) {
+        //Get list of products where the "was" price is not empty
         List<Product> filteredProducts = products.stream()
                 .filter(product -> !product.getPrice().getWas().isEmpty()).collect(Collectors.toList());
 
+        /* construct a map of sorted products. This map is required because the now price in json can be either String or Object
+        Eg: now: "15.00" or now: { from: "25.00", to: "35.00" } */
         Map<BigDecimal, Product> sortedReducedProducts = new TreeMap<>(Collections.reverseOrder());
         for(Product product : filteredProducts) {
             String now;
