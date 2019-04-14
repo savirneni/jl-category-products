@@ -30,7 +30,7 @@ public class JsonBuilder {
                         .title(product.getTitle())
                         .colorSwatches(buildColorSwatch(product.getColorSwatches()))
                         .nowPrice(buildNowPrice(product))
-                        .priceLabel(product.getPrice().getWas())
+                        .priceLabel(buildPriceLabel(product))
                         .build();
 
                 reducedProducts.add(rProduct);
@@ -45,18 +45,28 @@ public class JsonBuilder {
         List<ColorSwatch> rColorSwatches = new ArrayList<>();
         if (colorSwatches != null && !colorSwatches.isEmpty()) {
             for (com.jl.categoryproducts.backend.model.ColorSwatch colorSwatch : colorSwatches) {
-                ColorSwatch rColorSwarch = ColorSwatch.builder()
+                ColorSwatch rColorSwatch = ColorSwatch.builder()
                         .color(colorSwatch.getColor())
                         .rgbColor(colorSwatch.getBasicColor())
                         .skuId(colorSwatch.getSkuId())
                         .build();
-                rColorSwatches.add(rColorSwarch);
+                rColorSwatches.add(rColorSwatch);
             }
         }
         return rColorSwatches;
     }
 
     private String buildNowPrice(com.jl.categoryproducts.backend.model.Product product) {
+        String now = getNowPrice(product);
+        return "£" + formatPrice(now);
+    }
+
+    private String formatPrice(String now) {
+        int intNowPrice = new BigDecimal(now).intValue();
+        return intNowPrice < 10 ? new BigDecimal(now).toString() : String.valueOf(intNowPrice);
+    }
+
+    private String getNowPrice(com.jl.categoryproducts.backend.model.Product product) {
         String now;
         if (product.getPrice().getNow() instanceof  String) {
             now = (String) product.getPrice().getNow();
@@ -64,8 +74,10 @@ public class JsonBuilder {
             Map<String, String> hashMap = (LinkedHashMap<String, String>)product.getPrice().getNow();
             now = hashMap.get("to");
         }
-        int intNowPrice = new BigDecimal(now).intValue();
-        String price =  intNowPrice < 10 ? new BigDecimal(now).toString() : String.valueOf(intNowPrice);
-        return "£" + price;
+        return now;
+    }
+
+    private String buildPriceLabel(com.jl.categoryproducts.backend.model.Product product) {
+        return "Was £" + formatPrice(product.getPrice().getWas()) + ", now " + buildNowPrice(product);
     }
 }

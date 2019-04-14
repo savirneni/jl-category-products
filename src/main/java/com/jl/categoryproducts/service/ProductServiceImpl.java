@@ -15,7 +15,7 @@ public class ProductServiceImpl {
     private CategoryServiceImpl categoryService;
 
     @Autowired
-    public ProductServiceImpl(CategoryServiceImpl categoryService) {
+    ProductServiceImpl(CategoryServiceImpl categoryService) {
         this.categoryService = categoryService;
     }
 

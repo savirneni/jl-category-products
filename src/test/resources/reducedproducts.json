@@ -8,7 +8,7 @@
       "averageRating": 4.2083,
       "reviews": 24,
       "price": {
-        "was": "",
+        "was": "100.00",
         "then1": "",
         "then2": "",
         "now": "59.00",
@@ -67,7 +67,7 @@
       "averageRating": 4.5417,
       "reviews": 24,
       "price": {
-        "was": "",
+        "was": "130.00",
         "then1": "",
         "then2": "",
         "now": {
@@ -146,7 +146,7 @@
       "averageRating": 4.6044,
       "reviews": 91,
       "price": {
-        "was": "",
+        "was": "9.00",
         "then1": "",
         "then2": "",
         "now": "2.25",
