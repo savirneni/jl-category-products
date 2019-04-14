@@ -5,9 +5,12 @@ import static org.springframework.http.ResponseEntity.ok;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.jl.categoryproducts.exception.EnumNotFoundException;
 import com.jl.categoryproducts.model.Filter;
 import com.jl.categoryproducts.model.LabelType;
 import com.jl.categoryproducts.service.ProductService;
+
+import java.util.Arrays;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -32,10 +35,18 @@ public class ProductController {
     @ApiOperation(value = "findReducedProducts",
         notes = "Returns an array of the reduced products",
         response = String.class, responseContainer = "Reduced product details")
-    @ApiResponses(value = {@ApiResponse(code = 200, message = "Product", response = String.class)})
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "Products", response = String.class)})
     @RequestMapping(value = "/categories/{categoryId}/products", method = GET, produces = APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<String> findReducedProducts(
-            @RequestParam(value = "labelType") LabelType labelType) throws JsonProcessingException {
-        return ok(productService.findReducedProducts(Filter.builder().labelType(labelType).build()));
+            @RequestParam(value = "labelType", required = false) String labelType) throws JsonProcessingException {
+
+        LabelType labelTypeParam;
+        try {
+            labelTypeParam = labelType != null ? LabelType.valueOf(labelType.toUpperCase()) : null;
+        } catch(IllegalArgumentException ie) {
+            throw new EnumNotFoundException(labelType);
+        }
+
+        return ok(productService.findReducedProducts(Filter.builder().labelType(labelTypeParam).build()));
     }
 }

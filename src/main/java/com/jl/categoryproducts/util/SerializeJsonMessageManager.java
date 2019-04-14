@@ -27,7 +27,7 @@ public enum SerializeJsonMessageManager {
 
     private String getSerialisedMessage(String fileName) {
         try {
-            return new String(Files.readAllBytes(Paths.get("src/main/resources/" + fileName)));
+            return new String(Files.readAllBytes(Paths.get("src/main/resources/json/" + fileName)));
         } catch (IOException e) {
             throw new SerializeException();
         }

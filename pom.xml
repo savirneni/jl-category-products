@@ -8,6 +8,12 @@
     <artifactId>categoryproducts</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.4.RELEASE</version>
+    </parent>
+
     <properties>
         <springBoot.version>2.1.4.RELEASE</springBoot.version>
         <springfoxSwagger.version>2.8.0</springfoxSwagger.version>
