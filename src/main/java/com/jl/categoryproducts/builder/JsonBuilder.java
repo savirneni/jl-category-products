@@ -4,11 +4,10 @@ package com.jl.categoryproducts.builder;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jl.categoryproducts.model.ColorSwatch;
-import com.jl.categoryproducts.model.Product;
-import com.jl.categoryproducts.model.Products;
+import com.jl.categoryproducts.model.*;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -19,7 +18,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class JsonBuilder {
 
-    public String build(List<com.jl.categoryproducts.backend.model.Product> products) throws JsonProcessingException {
+    private static final String WAS = "Was £";
+    private static final String THEN = ", then £";
+    private static final String NOW = ", now £";
+    private static final String PERCENT = " off - now £";
+
+    public String build(List<com.jl.categoryproducts.backend.model.Product> products, Filter filter) throws
+            JsonProcessingException {
 
         List<Product> reducedProducts = new ArrayList<>();
         if (products != null && !products.isEmpty()) {
@@ -30,7 +35,7 @@ public class JsonBuilder {
                         .title(product.getTitle())
                         .colorSwatches(buildColorSwatch(product.getColorSwatches()))
                         .nowPrice(buildNowPrice(product))
-                        .priceLabel(buildPriceLabel(product))
+                        .priceLabel(buildPriceLabel(product, filter))
                         .build();
 
                 reducedProducts.add(rProduct);
@@ -57,8 +62,7 @@ public class JsonBuilder {
     }
 
     private String buildNowPrice(com.jl.categoryproducts.backend.model.Product product) {
-        String now = getNowPrice(product);
-        return "£" + formatPrice(now);
+        return "£" + getNowPrice(product);
     }
 
     private String formatPrice(String now) {
@@ -74,10 +78,40 @@ public class JsonBuilder {
             Map<String, String> hashMap = (LinkedHashMap<String, String>)product.getPrice().getNow();
             now = hashMap.get("to");
         }
-        return now;
+        return formatPrice(now);
     }
 
-    private String buildPriceLabel(com.jl.categoryproducts.backend.model.Product product) {
-        return "Was £" + formatPrice(product.getPrice().getWas()) + ", now " + buildNowPrice(product);
+    private String buildPriceLabel(com.jl.categoryproducts.backend.model.Product product, Filter filter) {
+        if (LabelType.SHOWPERCENTDISCOUNT.equals(filter.getLabelType())) {
+            return buildPercentDiscount(product);
+        } else if (LabelType.SHOWWASTHENNOW.equals(filter.getLabelType())) {
+            return buildWasThenNowPrice(product);
+        } else {
+            return buildWasNowPrice(product);
+        }
     }
+
+    private String buildPercentDiscount(com.jl.categoryproducts.backend.model.Product product) {
+        BigDecimal percentDiscount = (new BigDecimal(product.getPrice().getWas()).subtract(new BigDecimal(getNowPrice
+                (product)))).divide(new BigDecimal(product.getPrice().getWas()), 2);
+
+        return NumberFormat.getPercentInstance().format(percentDiscount) + PERCENT + getNowPrice(product);
+    }
+
+    private String buildWasThenNowPrice(com.jl.categoryproducts.backend.model.Product product) {
+        String then2 = product.getPrice().getThen2();
+        String then = "".equals(then2) ? product.getPrice().getThen1() : then2 ;
+
+        if ("".equals(then)) {
+            return buildWasNowPrice(product);
+        } else {
+            return WAS + formatPrice(product.getPrice().getWas()) + THEN + formatPrice(then) + NOW + getNowPrice(product);
+        }
+
+    }
+
+    private String buildWasNowPrice(com.jl.categoryproducts.backend.model.Product product) {
+        return WAS + formatPrice(product.getPrice().getWas()) + NOW + getNowPrice(product);
+    }
+
 }

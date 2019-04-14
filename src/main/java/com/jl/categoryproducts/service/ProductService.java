@@ -1,6 +1,9 @@
 package com.jl.categoryproducts.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jl.categoryproducts.backend.model.Product;
+import com.jl.categoryproducts.builder.JsonBuilder;
+import com.jl.categoryproducts.model.Filter;
 
 import java.math.BigDecimal;
 import java.util.*;
@@ -10,13 +13,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductServiceImpl {
+public class ProductService {
 
-    private CategoryServiceImpl categoryService;
+    private CategoryService categoryService;
+    private JsonBuilder jsonBuilder;
 
     @Autowired
-    ProductServiceImpl(CategoryServiceImpl categoryService) {
+    ProductService(CategoryService categoryService,
+                   JsonBuilder jsonBuilder) {
         this.categoryService = categoryService;
+        this.jsonBuilder = jsonBuilder;
+    }
+
+    public String findReducedProducts(Filter filter) throws JsonProcessingException {
+        return jsonBuilder.build(getReducedProducts(), filter);
     }
 
     public List<Product> getReducedProducts() {

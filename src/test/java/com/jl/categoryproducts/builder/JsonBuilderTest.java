@@ -5,6 +5,7 @@ import static net.javacrumbs.jsonunit.JsonAssert.assertJsonEquals;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jl.categoryproducts.backend.model.Category;
+import com.jl.categoryproducts.model.Filter;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -23,7 +24,7 @@ public class JsonBuilderTest {
     @Test
     public void reducedProductsJsonBuildTest() throws JsonProcessingException {
         Category category = REDUCED_PRODUCTS.getDeserializeMessage();
-        String json = jsonBuilder.build(category.getProducts());
+        String json = jsonBuilder.build(category.getProducts(), Filter.builder().build());
 
         assertJsonEquals(EXPECTED_REDUCED_PRODUCTS.getSerializedMessage(), json);
 

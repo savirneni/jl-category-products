@@ -17,8 +17,12 @@ import lombok.ToString;
 @ToString
 public enum SerializeJsonMessageTestManager {
 
-    REDUCED_PRODUCTS("reducedproducts.json"),
-    EXPECTED_REDUCED_PRODUCTS("expectedreducedproducts.json");
+    REDUCED_PRODUCTS("reducedProducts.json"),
+    EXPECTED_REDUCED_PRODUCTS("expectedReducedProducts.json"),
+
+    EXPECTED_REDUCED_PRODUCTS_QP_DEFAULT("expectedReducedProductsWithQPDefault.json"),
+    EXPECTED_REDUCED_PRODUCTS_QP_SHOWWASTHENNOW("expectedReducedProductsWithQPShowWasThenNow.json"),
+    EXPECTED_REDUCED_PRODUCTS_QP_SHOWPERCENTDISCOUNT("expectedReducedProductsWithQPShowPercentDiscount.json");
 
     private final String serializedMessage;
 

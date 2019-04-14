@@ -6,7 +6,7 @@ import com.jl.categoryproducts.util.SerializeJsonMessageManager;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CategoryServiceImpl {
+public class CategoryService {
 
     public Category getCategoryProducts() {
         return SerializeJsonMessageManager.CATEGORY_PRODUCTS.getDeserializeMessage();

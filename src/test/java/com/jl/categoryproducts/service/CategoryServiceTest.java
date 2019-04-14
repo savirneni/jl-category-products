@@ -4,19 +4,18 @@ import static org.junit.Assert.*;
 
 import com.jl.categoryproducts.backend.model.Category;
 import com.jl.categoryproducts.backend.model.Product;
-import com.jl.categoryproducts.service.CategoryServiceImpl;
 
 import org.junit.Before;
 import org.junit.Test;
 
 
-public class CategoryServiceImplTest {
+public class CategoryServiceTest {
 
-    private CategoryServiceImpl categoryService;
+    private CategoryService categoryService;
 
     @Before
     public void setUp() {
-        categoryService = new CategoryServiceImpl();
+        categoryService = new CategoryService();
     }
 
     @Test
