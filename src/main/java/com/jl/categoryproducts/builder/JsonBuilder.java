@@ -24,8 +24,7 @@ public class JsonBuilder {
     private static final String NOW = ", now £";
     private static final String PERCENT = " off - now £";
 
-    public String build(List<com.jl.categoryproducts.backend.model.Product> products, Filter filter) throws
-            JsonProcessingException {
+    public String build(List<com.jl.categoryproducts.backend.model.Product> products, Filter filter) {
 
         List<Product> reducedProducts = new ArrayList<>();
         if (products != null && !products.isEmpty()) {
@@ -44,7 +43,11 @@ public class JsonBuilder {
         }
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT);
-        return objectMapper.writeValueAsString(Products.builder().products(reducedProducts).build());
+        try {
+            return objectMapper.writeValueAsString(Products.builder().products(reducedProducts).build());
+        } catch (JsonProcessingException je) {
+            return "{}";
+        }
     }
 
     private List<ColorSwatch> buildColorSwatch(List<com.jl.categoryproducts.backend.model.ColorSwatch> colorSwatches) {

@@ -38,7 +38,7 @@ public class ProductController {
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Products", response = String.class)})
     @RequestMapping(value = "/categories/{categoryId}/products", method = GET, produces = APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<String> findReducedProducts(
-            @RequestParam(value = "labelType", required = false) String labelType) throws JsonProcessingException {
+            @RequestParam(value = "labelType", required = false) String labelType) {
 
         LabelType labelTypeParam;
         try {

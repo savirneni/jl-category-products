@@ -2,11 +2,8 @@ package com.jl.categoryproducts.service;
 
 import static com.jl.categoryproducts.util.SerializeJsonMessageTestManager.*;
 import static net.javacrumbs.jsonunit.JsonAssert.assertJsonEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jl.categoryproducts.backend.model.Product;
 import com.jl.categoryproducts.builder.JsonBuilder;
 import com.jl.categoryproducts.model.Filter;
@@ -41,7 +38,7 @@ public class ProductServiceTest {
     }
 
     @Test
-    public void findReducedProductsWithQPDefaultTest() throws JsonProcessingException {
+    public void findReducedProductsWithQPDefaultTest() {
         Filter filter = Filter.builder().build();
 
         String reducedProductsJson = productService.findReducedProducts(filter);
@@ -51,7 +48,7 @@ public class ProductServiceTest {
     }
 
     @Test
-    public void findReducedProductsWithQPShowWasThenNowTest() throws JsonProcessingException {
+    public void findReducedProductsWithQPShowWasThenNowTest() {
         Filter filter = Filter.builder().labelType(LabelType.SHOWWASTHENNOW).build();
 
         String reducedProductsJson = productService.findReducedProducts(filter);
@@ -61,7 +58,7 @@ public class ProductServiceTest {
     }
 
     @Test
-    public void findReducedProductsWithQPShowPercentDiscountTest() throws JsonProcessingException {
+    public void findReducedProductsWithQPShowPercentDiscountTest() {
         Filter filter = Filter.builder().labelType(LabelType.SHOWPERCENTDISCOUNT).build();
 
         String reducedProductsJson = productService.findReducedProducts(filter);

@@ -1,6 +1,5 @@
 package com.jl.categoryproducts.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jl.categoryproducts.backend.model.Product;
 import com.jl.categoryproducts.builder.JsonBuilder;
 import com.jl.categoryproducts.model.Filter;
@@ -25,7 +24,7 @@ public class ProductService {
         this.jsonBuilder = jsonBuilder;
     }
 
-    public String findReducedProducts(Filter filter) throws JsonProcessingException {
+    public String findReducedProducts(Filter filter) {
         return jsonBuilder.build(getReducedProducts(), filter);
     }
 
