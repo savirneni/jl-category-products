@@ -26,12 +26,17 @@
 		
 - An optional query param can be set to any of following values:
 		    
-  * ShowWasNow
-  * ShowWasThenNow
-  * ShowPercentDiscount
-		
+    * ShowWasNow
+    * ShowWasThenNow
+    * ShowPercentDiscount
+
 	
-	    Eg: URL with Query Param: 
+        Eg: URL with Query Param: 
 	    http://localhost:8080/categories/600001506/products?labelType=ShowWasNow
 	    
 - If the query param is not set then the default format is ShowWasNow
+
+## Notes
+- The following service url is configured in application.properties.
+
+        service.url=https://jl-nonprod-syst.apigee.net/v1/categories/600001506/products?key=2ALHCAAs6ikGRBoy6eTHA58RaG097Fma
