@@ -4,7 +4,6 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jl.categoryproducts.exception.EnumNotFoundException;
 import com.jl.categoryproducts.model.Filter;
 import com.jl.categoryproducts.model.LabelType;
@@ -34,7 +33,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void findReducedProductsWithNullQueryParameter() throws JsonProcessingException {
+    public void findReducedProductsWithNullQueryParameter() {
         when(productService.findReducedProducts(Filter.builder().build())).thenReturn(JSON);
 
         ResponseEntity<String> reducedProducts = controller.findReducedProducts(null);
@@ -44,7 +43,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void findReducedProductsWithQueryParameter() throws JsonProcessingException {
+    public void findReducedProductsWithQueryParameter() {
         when(productService.findReducedProducts(Filter.builder().labelType(LabelType.SHOWWASTHENNOW).build())).thenReturn(JSON);
 
         ResponseEntity<String> reducedProducts = controller.findReducedProducts("ShowWasThenNow");
@@ -54,7 +53,7 @@ public class ProductControllerTest {
     }
 
     @Test(expected = EnumNotFoundException.class)
-    public void findReducedProductsWithInvalidQueryParameter() throws JsonProcessingException {
+    public void findReducedProductsWithInvalidQueryParameter() {
 
         controller.findReducedProducts("InvalidLabelType");
 

@@ -17,6 +17,7 @@ import lombok.ToString;
 @ToString
 public enum SerializeJsonMessageTestManager {
 
+    CATEGORY_PRODUCTS("categoryProducts.json"),
     REDUCED_PRODUCTS("reducedProducts.json"),
     EXPECTED_REDUCED_PRODUCTS("expectedReducedProducts.json"),
 
