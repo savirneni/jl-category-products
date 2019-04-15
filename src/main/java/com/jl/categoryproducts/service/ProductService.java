@@ -29,7 +29,7 @@ public class ProductService {
         return jsonBuilder.build(getReducedProducts(), filter);
     }
 
-    public List<Product> getReducedProducts() {
+    protected List<Product> getReducedProducts() {
         List<Product> products = categoryService.getCategoryProducts().getProducts();
         return filterAndSort(products);
     }
