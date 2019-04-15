@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jl.categoryproducts.model.*;
+import com.jl.categoryproducts.util.RGBColourUtil;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
@@ -52,7 +53,7 @@ public class JsonBuilder {
             for (com.jl.categoryproducts.backend.model.ColorSwatch colorSwatch : colorSwatches) {
                 ColorSwatch rColorSwatch = ColorSwatch.builder()
                         .color(colorSwatch.getColor())
-                        .rgbColor(colorSwatch.getBasicColor())
+                        .rgbColor(RGBColourUtil.get(colorSwatch.getBasicColor()))
                         .skuId(colorSwatch.getSkuId())
                         .build();
                 rColorSwatches.add(rColorSwatch);

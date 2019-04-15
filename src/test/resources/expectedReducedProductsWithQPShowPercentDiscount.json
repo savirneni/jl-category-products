@@ -34,12 +34,12 @@
       "colorSwatches": [
         {
           "color": "Navy",
-          "rgbColor": "Blue",
+          "rgbColor": "#0000FF",
           "skuId": "237334043"
         },
         {
           "color": "Mimosa Yellow",
-          "rgbColor": "Yellow",
+          "rgbColor": "#FFFF00",
           "skuId": "237334029"
         }
       ],
@@ -52,37 +52,37 @@
       "colorSwatches": [
         {
           "color": "Dark Grey",
-          "rgbColor": "Grey",
+          "rgbColor": "#808080",
           "skuId": "237169362"
         },
         {
           "color": "Dark Mauve",
-          "rgbColor": "Purple",
+          "rgbColor": "#800080",
           "skuId": "237169364"
         },
         {
           "color": "Dark Teal",
-          "rgbColor": "Blue",
+          "rgbColor": "#0000FF",
           "skuId": "237169370"
         },
         {
           "color": "Berry",
-          "rgbColor": "Purple",
+          "rgbColor": "#800080",
           "skuId": "237169205"
         },
         {
           "color": "Burgundy",
-          "rgbColor": "Red",
+          "rgbColor": "#FF0000",
           "skuId": "237169270"
         },
         {
           "color": "Navy",
-          "rgbColor": "Blue",
+          "rgbColor": "#0000FF",
           "skuId": "237169572"
         },
         {
           "color": "Royal Blue",
-          "rgbColor": "Blue",
+          "rgbColor": "#0000FF",
           "skuId": "237169620"
         }
       ],

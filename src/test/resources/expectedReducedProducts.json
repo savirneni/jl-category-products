@@ -13,12 +13,12 @@
       "colorSwatches": [
         {
           "color": "Wine",
-          "rgbColor": "Red",
+          "rgbColor": "#FF0000",
           "skuId": "237494589"
         },
         {
           "color": "Midnight",
-          "rgbColor": "Blue",
+          "rgbColor": "#0000FF",
           "skuId": "237494562"
         }
       ],
@@ -31,17 +31,17 @@
       "colorSwatches": [
         {
           "color": "French Blue",
-          "rgbColor": "Blue",
+          "rgbColor": "#0000FF",
           "skuId": "237348235"
         },
         {
           "color": "Hibiscus",
-          "rgbColor": "Pink",
+          "rgbColor": "#FFC0CB",
           "skuId": "237348324"
         },
         {
           "color": "Midnight",
-          "rgbColor": "Blue",
+          "rgbColor": "#0000FF",
           "skuId": "237348312"
         }
       ],
