@@ -2,9 +2,9 @@ package com.jl.categoryproducts.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jl.categoryproducts.backend.model.Category;
-import com.jl.categoryproducts.exception.DeserializeException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,7 +32,7 @@ public class CategoryService {
         try {
             return new ObjectMapper().readValue(response.getBody(), Category.class);
         } catch (IOException ie) {
-            throw new DeserializeException();
+            return Category.builder().products(new ArrayList<>()).build();
         }
     }
 }

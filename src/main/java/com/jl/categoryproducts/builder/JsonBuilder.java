@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class JsonBuilder {
 
+    private static final String EMPTY_JSON = "{}";
     private static final String WAS = "Was £";
     private static final String THEN = ", then £";
     private static final String NOW = ", now £";
@@ -40,14 +41,16 @@ public class JsonBuilder {
 
                 reducedProducts.add(rProduct);
             }
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.enable(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT);
+            try {
+                return objectMapper.writeValueAsString(Products.builder().products(reducedProducts).build());
+            } catch (JsonProcessingException je) {
+                return EMPTY_JSON;
+            }
         }
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.enable(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT);
-        try {
-            return objectMapper.writeValueAsString(Products.builder().products(reducedProducts).build());
-        } catch (JsonProcessingException je) {
-            return "{}";
-        }
+        return EMPTY_JSON;
     }
 
     private List<ColorSwatch> buildColorSwatch(List<com.jl.categoryproducts.backend.model.ColorSwatch> colorSwatches) {

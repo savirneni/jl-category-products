@@ -12,6 +12,7 @@ import com.jl.categoryproducts.model.Filter;
 import com.jl.categoryproducts.model.LabelType;
 import com.jl.categoryproducts.util.SerializeJsonMessageTestManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
@@ -79,6 +80,18 @@ public class ProductServiceTest {
 
         assertNotNull(reducedProductsJson);
         assertJsonEquals(EXPECTED_REDUCED_PRODUCTS_QP_SHOWPERCENTDISCOUNT.getSerializedMessage(), reducedProductsJson);
+    }
+
+    @Test
+    public void findReducedProductsWhenProductsAreEmptyTest() {
+        when(categoryService.getCategoryProducts()).thenReturn(Category.builder().products(new ArrayList<>()).build());
+
+        Filter filter = Filter.builder().build();
+
+        String reducedProductsJson = productService.findReducedProducts(filter);
+
+        assertNotNull(reducedProductsJson);
+        assertJsonEquals("{}", reducedProductsJson);
     }
 
 }

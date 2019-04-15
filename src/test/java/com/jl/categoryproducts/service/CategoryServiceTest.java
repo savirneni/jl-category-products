@@ -44,4 +44,16 @@ public class CategoryServiceTest {
         Product product = category.getProducts().get(0);
         assertEquals("3525081", product.getProductId());
     }
+
+    @Test
+    public void getCategoryProductsForInvalidJsonTest() {
+
+        String jsonResponse = "InvalidJson";
+        ResponseEntity<String> responseEntity = new ResponseEntity<>(jsonResponse, HttpStatus.ACCEPTED);
+        when(restTemplate.getForEntity("http", String.class)).thenReturn(responseEntity);
+
+        Category category = categoryService.getCategoryProducts();
+        assertNotNull(category);
+        assertEquals(0, category.getProducts().size());
+    }
 }
