@@ -15,7 +15,7 @@
 
 ### 3. To find the products that have a price reduction
 
-	This endpoint returns an array of products that have a price reduction and sorted to show highest price reduction
+This endpoint returns an array of products that have a price reduction and sorted to show highest price reduction
 	 first. Price reduction is calculated using price.was - price.now
 	
 		Method  :   GET
@@ -24,14 +24,14 @@
 		
 		Query Param :  labelType
 		
-		    An optional query parm can be set to any of:
+An optional query param can be set to any of following values:
 		    
-		       * ShowWasNow
-		       * ShowWasThenNow
-		       * ShowPercentDiscount
+- ShowWasNow
+- ShowWasThenNow
+- ShowPercentDiscount
 		
 	
 	    Eg: URL with Query Param: 
 	    http://localhost:8080/categories/600001506/products?labelType=ShowWasNow
 	    
-	    * If the query param is not set then the default format is ShowWasNow
+- If the query param is not set then the default format is ShowWasNow
