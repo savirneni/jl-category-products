@@ -4,13 +4,10 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 import static org.springframework.http.ResponseEntity.ok;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.jl.categoryproducts.exception.EnumNotFoundException;
 import com.jl.categoryproducts.model.Filter;
 import com.jl.categoryproducts.model.LabelType;
 import com.jl.categoryproducts.service.ProductService;
-
-import java.util.Arrays;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

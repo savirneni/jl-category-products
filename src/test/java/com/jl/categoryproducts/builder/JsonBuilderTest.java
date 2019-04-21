@@ -29,4 +29,12 @@ public class JsonBuilderTest {
         assertJsonEquals(EXPECTED_REDUCED_PRODUCTS.getSerializedMessage(), json);
 
     }
+
+    @Test
+    public void reducedProductsJsonBuildWhenEmptyProductsTest() {
+        String json = jsonBuilder.build(null, Filter.builder().build());
+
+        assertJsonEquals("{}", json);
+
+    }
 }

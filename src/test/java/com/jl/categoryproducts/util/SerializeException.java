@@ -1,4 +1,4 @@
-package com.jl.categoryproducts.exception;
+package com.jl.categoryproducts.util;
 
 public class SerializeException extends RuntimeException {
 

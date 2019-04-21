@@ -17,6 +17,11 @@
     <properties>
         <springBoot.version>2.1.4.RELEASE</springBoot.version>
         <springfoxSwagger.version>2.8.0</springfoxSwagger.version>
+        <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+        <sonar.exclusions>
+            src/main/java/com/jl/categoryproducts/backend/model/*,
+            src/main/java/com/jl/categoryproducts/model/*
+        </sonar.exclusions>
     </properties>
 
     <dependencies>
@@ -77,8 +82,28 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.6.0.1398</version>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.3</version>
+                <configuration>
+                    <destFile>${sonar.jacoco.reportPath}</destFile>
+                    <append>true</append>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
-
 </project>
